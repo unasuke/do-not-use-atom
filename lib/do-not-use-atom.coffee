@@ -8,7 +8,7 @@ module.exports = DoNotUseAtom =
 
   activate: (state) ->
     @doNotUseAtomView = new DoNotUseAtomView(state.doNotUseAtomViewState)
-    @modalPanel = atom.workspace.addModalPanel(item: @doNotUseAtomView.getElement(), visible: false)
+    @modalPanel = atom.workspace.addModalPanel(item: @doNotUseAtomView.getElement(), visible: true)
 
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
@@ -26,8 +26,16 @@ module.exports = DoNotUseAtom =
 
   toggle: ->
     console.log 'DoNotUseAtom was toggled!'
+    @alert()
 
     if @modalPanel.isVisible()
       @modalPanel.hide()
     else
       @modalPanel.show()
+
+  alert: ->
+    atom.confirm
+      message: 'DO NOT USE ATOM!'
+      detailedMessage: 'You should use vim or emacs. OK?'
+      buttons:
+        OK: -> atom.close()
