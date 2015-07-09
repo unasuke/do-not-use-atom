@@ -1,7 +1,7 @@
 {
   "name": "do-not-use-atom",
   "main": "./lib/do-not-use-atom",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Alert when you're using atom.",
   "keywords": [],
   "activationCommands": {
