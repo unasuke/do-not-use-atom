@@ -1,0 +1,18 @@
+{
+  "name": "do-not-use-atom",
+  "main": "./lib/do-not-use-atom",
+  "version": "0.0.0",
+  "description": "Alert when you're using atom.",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "do-not-use-atom:toggle"
+  },
+  "repository": "https://github.com/atom/do-not-use-atom",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
